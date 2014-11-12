@@ -21,8 +21,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-//package vmcTest.test.groovy
-package vmcTest
+package vmcTest.tests
 
 import geb.*
 import geb.spock.*
@@ -30,8 +29,7 @@ import geb.driver.CachingDriverFactory
 import org.openqa.selenium.interactions.Actions
 import spock.lang.*
 import groovy.json.*
-//import vmcTest.SqlQueryPage
-//import vmcTest.VoltDBManagementCenterPage
+import vmcTest.pages.*
 
 /*
  * This class contains some initial tests....

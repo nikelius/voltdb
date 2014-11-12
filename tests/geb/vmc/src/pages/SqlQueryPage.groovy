@@ -21,31 +21,49 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package vmcTest
- 
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.firefox.FirefoxDriver
-import org.openqa.selenium.safari.SafariDriver
+package vmcTest.pages
 
+/*
+ * This class represents the 'SQL Query' tab of the VoltDB Management Center
+ * page, which is the VoltDB web UI (replacing the old Web Studio).
+ */
+class SqlQueryPage extends VoltDBManagementCenterPage {
+    //static url = 'http://localhost:8080/#o'
+    static content = {
+        //sqlQueryTab { $('#navSqlQuery') }
+        //sqlQueryLink    { sqlQueryTab.$('a') }
+        queryInput  { $('#theQueryText') }
+        runButton   { $('#runBTn') }
+        clearButton { $('#clearQuery') }
+        queryResult { $('.queryResult') }
+    }
+    static at = {
+        sqlQueryTab.attr('class') == 'active'
+        queryResult.displayed
+    }
 
-waiting {
-    timeout = 5
-}
+    def isOpen() {
+        return isSqlQueryPageOpen()
+    }
 
-environments {
+    def setQueryText(def queryText) {
+        queryInput.value(queryText)
+    }
     
-    firefox {
-        driver = { new FirefoxDriver() }
+    def getQueryText() {
+        return queryInput.value()
     }
 
-    chrome {
-        driver = { new ChromeDriver() }
+    def clearQuery() {
+        clearButton.click()
     }
 
-    safari {
-        driver = { new SafariDriver() }
+    def runQuery() {
+        runButton.click()
     }
 
+    def runQuery(def queryText) {
+        setQueryText(queryText)
+        runQuery()
+    }
 }
-
-// To run the tests with all browsers run “./gradlew test”

@@ -21,8 +21,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-//package vmcTest.pages
-package vmcTest
+package vmcTest.pages
 
 import geb.*
 import geb.spock.*
@@ -30,7 +29,6 @@ import geb.driver.CachingDriverFactory
 import org.openqa.selenium.interactions.Actions
 import spock.lang.*
 import groovy.json.*
-//import vmcTest.SqlQueryPage
 
 /*
  * This class represents a generic VoltDB Management Center page (without

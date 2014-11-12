@@ -21,50 +21,24 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-//package vmcTest.pages
-package vmcTest
+package vmcTest.pages
 
 /*
- * This class represents the 'SQL Query' tab of the VoltDB Management Center
- * page, which is the VoltDB web UI (replacing the old Web Studio).
+ * This class represents the 'DB Monitor' tab of the VoltDB Management Center
+ * page, which is the VoltDB web UI (replacing the old Management Center).
  */
-class SqlQueryPage extends VoltDBManagementCenterPage {
+class DbMonitorPage extends VoltDBManagementCenterPage {
     //static url = 'http://localhost:8080/#o'
-    static content = {
-        //sqlQueryTab { $('#navSqlQuery') }
-        //sqlQueryLink    { sqlQueryTab.$('a') }
-        queryInput  { $('#theQueryText') }
-        runButton   { $('#runBTn') }
-        clearButton { $('#clearQuery') }
-        queryResult { $('.queryResult') }
-    }
+    //static content = {
+        //dbMonitorTab { $('#navDbmonitor') }
+        //dbMonitorLink   { dbMonitorTab.find('a') }
+    //}
     static at = {
-        sqlQueryTab.attr('class') == 'active'
-        queryResult.displayed
+        dbMonitorTab.attr('class') == 'active'
+        //queryResult.displayed
     }
 
     def isOpen() {
-        return isSqlQueryPageOpen()
-    }
-
-    def setQueryText(def queryText) {
-        queryInput.value(queryText)
-    }
-    
-    def getQueryText() {
-        return queryInput.value()
-    }
-
-    def clearQuery() {
-        clearButton.click()
-    }
-
-    def runQuery() {
-        runButton.click()
-    }
-
-    def runQuery(def queryText) {
-        setQueryText(queryText)
-        runQuery()
+        return isDbMonitorPageOpen()
     }
 }

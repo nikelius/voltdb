@@ -21,25 +21,24 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-//package vmcTest.pages
-package vmcTest
+package vmcTest.pages
 
 /*
- * This class represents the 'DB Monitor' tab of the VoltDB Management Center
- * page, which is the VoltDB web UI (replacing the old Management Center).
+ * This class represents the 'Schema' tab of the VoltDB Management Center
+ * page, which is the VoltDB web UI (replacing the old Catalog Report).
  */
-class DbMonitorPage extends VoltDBManagementCenterPage {
+class SchemaPage extends VoltDBManagementCenterPage {
     //static url = 'http://localhost:8080/#o'
     //static content = {
-        //dbMonitorTab { $('#navDbmonitor') }
-        //dbMonitorLink   { dbMonitorTab.find('a') }
+        //schemaTab { $('#navSchema') }
+        //schemaLink   { schemaTab.find('a') }
     //}
     static at = {
-        dbMonitorTab.attr('class') == 'active'
+        schemaTab.attr('class') == 'active'
         //queryResult.displayed
     }
 
     def isOpen() {
-        return isDbMonitorPageOpen()
+        return isSchemaPageOpen()
     }
 }
