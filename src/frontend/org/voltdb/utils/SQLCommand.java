@@ -87,6 +87,9 @@ public class SQLCommand
     // identifiers.
     private static String followedBySpaceOrQuote = "(?=\"|\\s)";
 
+    // Secret flag set by --enable-adhoc-proc to allow exec @AdHoc
+    private static boolean enableAdHocProc = false;
+
     // Ugh, these are all fragile.
     private static final Pattern CreateView =
         Pattern.compile(
@@ -1025,9 +1028,10 @@ public class SQLCommand
         Procedures.put("@ApplyBinaryLogSP",
                 ImmutableMap.<Integer, List<String>>builder().put( 2, Arrays.asList("varbinary", "varbinary")).build());
 
-        //XXX Temporary
-        Procedures.put("@AdHoc",
+        if (enableAdHocProc) {
+            Procedures.put("@AdHoc",
                 ImmutableMap.<Integer, List<String>>builder().put(1, Arrays.asList("varchar")).build());
+        }
     }
 
     public static Client getClient(ClientConfig config, String[] servers, int port) throws Exception
@@ -1292,6 +1296,9 @@ public class SQLCommand
                 }
                 else if (arg.equals("--debug")) {
                     debug = true;
+                }
+                else if ((arg.equals("--enable-adhoc-proc"))) {
+                    enableAdHocProc = true;
                 }
                 else if (arg.equals("--help")) {
                     printHelp(System.out); // Print readme to the screen
