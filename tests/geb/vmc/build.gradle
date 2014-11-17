@@ -35,7 +35,7 @@ dependencies {
     def seleniumVersion = "2.44.0"
     def spockVersion = "0.7-groovy-2.0"
 
-    //Geb & Spock
+    // GEB & Spock
     testCompile "org.gebish:geb-spock:$gebVersion"
     testCompile "org.spockframework:spock-core:$spockVersion"
 
@@ -48,9 +48,11 @@ dependencies {
 sourceSets {
     test {
         groovy {
-            srcDir 'src/config'
             srcDir 'src/pages'
             srcDir 'src/tests'
+        }
+        resources {
+            srcDir 'src/resources'
         }
     }
 }
