@@ -28,7 +28,6 @@ package vmcTest.pages
  * page, which is the VoltDB web UI (replacing the old Management Center).
  */
 class DbMonitorPage extends VoltDBManagementCenterPage {
-    //static url = 'http://localhost:8080/#o'
     //static content = {
         //dbMonitorTab { $('#navDbmonitor') }
         //dbMonitorLink   { dbMonitorTab.find('a') }

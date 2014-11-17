@@ -28,7 +28,6 @@ package vmcTest.pages
  * page, which is the VoltDB web UI (replacing the old Catalog Report).
  */
 class SchemaPage extends VoltDBManagementCenterPage {
-    //static url = 'http://localhost:8080/#o'
     //static content = {
         //schemaTab { $('#navSchema') }
         //schemaLink   { schemaTab.find('a') }

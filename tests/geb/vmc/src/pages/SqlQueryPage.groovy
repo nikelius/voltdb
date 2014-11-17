@@ -28,14 +28,13 @@ package vmcTest.pages
  * page, which is the VoltDB web UI (replacing the old Web Studio).
  */
 class SqlQueryPage extends VoltDBManagementCenterPage {
-    //static url = 'http://localhost:8080/#o'
     static content = {
-        //sqlQueryTab { $('#navSqlQuery') }
-        //sqlQueryLink    { sqlQueryTab.$('a') }
         queryInput  { $('#theQueryText') }
         runButton   { $('#runBTn') }
         clearButton { $('#clearQuery') }
         queryResult { $('.queryResult') }
+        errorPopup  (required: false) { $('.popup') }
+        errorMessage(required: false) { errorPopup.find('#errorMessage') }
     }
     static at = {
         sqlQueryTab.attr('class') == 'active'
