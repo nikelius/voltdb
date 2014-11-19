@@ -23,7 +23,7 @@
 
 package vmcTest.pages
 
-/*
+/**
  * This class represents the 'DB Monitor' tab of the VoltDB Management Center
  * page, which is the VoltDB web UI (replacing the old Management Center).
  */
@@ -37,6 +37,11 @@ class DbMonitorPage extends VoltDBManagementCenterPage {
         //queryResult.displayed
     }
 
+    /**
+     * Returns true if the current page is indeed a DbMonitorPage (i.e., the
+     * "DB Monitor" tab of the VoltDB Management Center page is currently open).
+     * @return true if a DbMonitorPage is currently open.
+     */
     def isOpen() {
         return isDbMonitorPageOpen()
     }
