@@ -30,7 +30,7 @@ import org.openqa.selenium.interactions.Actions
 import spock.lang.*
 import groovy.json.*
 
-/*
+/**
  * This class represents a generic VoltDB Management Center page (without
  * specifying which tab you are on), which is the main page of the web UI
  * - the new UI for version 4.9 (November 2014), replacing the old Web Studio
@@ -53,7 +53,12 @@ class VoltDBManagementCenterPage extends Page {
         schemaLink.displayed
         sqlQueryLink.displayed
     }
-    
+
+    /**
+     * Returns true if the current page is a DbMonitorPage (i.e., the "DB Monitor"
+     * tab of the VoltDB Management Center page is currently open).
+     * @return true if a DbMonitorPage is currently open.
+     */
     def boolean isDbMonitorPageOpen() {
         if (dbMonitorTab.attr('class') == 'active') {
             return true
@@ -61,7 +66,12 @@ class VoltDBManagementCenterPage extends Page {
             return false
         }
     }
-    
+
+    /**
+     * Returns true if the current page is a SchemaPage (i.e., the "Schema"
+     * tab of the VoltDB Management Center page is currently open).
+     * @return true if a SchemaPage is currently open.
+     */
     def boolean isSchemaPageOpen() {
         if (schemaTab.attr('class') == 'active') {
             return true
@@ -70,6 +80,11 @@ class VoltDBManagementCenterPage extends Page {
         }
     }
 
+    /**
+     * Returns true if the current page is a SqlQueryPage (i.e., the "SQL Query"
+     * tab of the VoltDB Management Center page is currently open).
+     * @return true if a SqlQueryPage is currently open.
+     */
     def boolean isSqlQueryPageOpen() {
         if (sqlQueryTab.attr('class') == 'active') {
             return true
