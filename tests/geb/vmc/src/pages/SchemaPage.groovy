@@ -23,7 +23,7 @@
 
 package vmcTest.pages
 
-/*
+/**
  * This class represents the 'Schema' tab of the VoltDB Management Center
  * page, which is the VoltDB web UI (replacing the old Catalog Report).
  */
@@ -37,6 +37,11 @@ class SchemaPage extends VoltDBManagementCenterPage {
         //queryResult.displayed
     }
 
+    /**
+     * Returns true if the current page is indeed a SchemaPage (i.e., the
+     * "Schema" tab of the VoltDB Management Center page is currently open).
+     * @return true if a SchemaPage is currently open.
+     */
     def isOpen() {
         return isSchemaPageOpen()
     }
